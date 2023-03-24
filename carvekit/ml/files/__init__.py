@@ -1,6 +1,8 @@
 from pathlib import Path
+import os
 
-carvekit_dir = Path.home().joinpath(".cache/carvekit")
+carvekit_dir = Path(os.environ.get(
+    "CARVEKIT_HOME",  Path.home().joinpath(".cache/carvekit")))
 
 carvekit_dir.mkdir(parents=True, exist_ok=True)
 
