@@ -72,7 +72,7 @@ def get_precision_autocast(
 
     return (
         torch.autocast(
-            device_type=device, dtype=dtype, enabled=True, cache_enabled=cache_enabled
+            device_type=torch.device(device).type, dtype=dtype, enabled=True, cache_enabled=cache_enabled
         ),
         dtype,
     )
