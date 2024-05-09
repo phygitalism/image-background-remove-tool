@@ -52,6 +52,14 @@ def tracer_b7_pretrained() -> pathlib.Path:
     """
     return downloader("tracer_b7.pth")
 
+def tracer_b7_carveset_finetuned() -> pathlib.Path:
+    """Returns TRACER with EfficientNet v1 b7 encoder pretrained model location
+    The model of tracer b7, which has been finetuned on the CarveSet dataset, with DUTS-HD subset.
+    This model achieves an average F-Beta score of 96.2% on the test set.
+    Returns:
+        pathlib.Path to model location
+    """
+    return downloader("tracer-b7-carveset-finetuned.pth")
 
 def tracer_hair_pretrained() -> pathlib.Path:
     """Returns TRACER with EfficientNet v1 b7 encoder model for hair segmentation location

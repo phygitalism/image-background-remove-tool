@@ -14,7 +14,7 @@ from PIL import Image
 
 from carvekit.ml.arch.tracerb7.tracer import TracerDecoder
 from carvekit.ml.arch.tracerb7.efficientnet import EfficientEncoderB7
-from carvekit.ml.files.models_loc import tracer_b7_pretrained, tracer_hair_pretrained
+from carvekit.ml.files.models_loc import tracer_b7_pretrained, tracer_hair_pretrained, tracer_b7_carveset_finetuned
 from carvekit.utils.models_utils import get_precision_autocast, cast_network
 from carvekit.utils.image_utils import load_image, convert_image
 from carvekit.utils.pool_utils import thread_pool_processing, batch_generator
@@ -47,7 +47,8 @@ class TracerUniversalB7(TracerDecoder):
 
         """
         if model_path is None:
-            model_path = tracer_b7_pretrained()
+            #model_path = tracer_b7_pretrained()
+            model_path = tracer_b7_carveset_finetuned()
         super(TracerUniversalB7, self).__init__(
             encoder=EfficientEncoderB7(),
             rfb_channel=[32, 64, 128],
